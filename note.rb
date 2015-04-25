@@ -123,3 +123,7 @@ class Notes
   end
   
 end
+
+catch :ctrl_c do
+  note.close
+end

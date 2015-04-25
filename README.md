@@ -26,6 +26,24 @@ Quite simple.
        pp item
     end
 
+### Create commands
+
+    # ----------------------------------
+    # external command we've bind
+    # ----------------------------------
+    def switch_light_on
+       puts "*** switch_light_on"
+	   true # if true message will be deleted from imap server
+    end
+
+    # ----------------------------------
+    # external command we've bind
+    # ----------------------------------
+    def switch_light_off
+	   puts "*** switch_light_off"
+	   true
+    end
+
 ## References
 
 http://blog.smartnoob.de/2015/01/26/siriapi8-siri-api-fuer-ios8/#more-1010

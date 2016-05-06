@@ -64,7 +64,7 @@ class Notes
   # ----------------------------------------
   # after all initialisation is done, we run
   # ----------------------------------------
-  def run( keyword = 'iphone' ) &block
+  def run( keyword = 'iphone' &block )
     loop do
       @imap.idle do | resp |
         if resp.kind_of?( Net::IMAP::UntaggedResponse ) and resp.name == "EXISTS"
@@ -124,6 +124,6 @@ class Notes
   
 end
 
-catch :ctrl_c do
-  note.close
-end
+#catch :ctrl_c do
+#  note.close
+#end

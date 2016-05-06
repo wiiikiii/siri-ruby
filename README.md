@@ -5,6 +5,9 @@ We use siri to create notes, we then read from icloud imap server and execute co
 The idea was stolen from SiriAPI8. But because I do not like programming in python
 I rewrote the class in ruby.
 
+At the moment the program in only working with os x 10.10 and before.
+Notes added with ios 9 and after are no longer accessable with imap.
+
 Quite simple.
 
 ### Create and connect to server

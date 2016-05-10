@@ -41,16 +41,18 @@ Quite simple.
     # external command we've bind
     # ----------------------------------
     def switch_light_on
-       puts "*** switch_light_on"
-	   true # if true message will be deleted from imap server
+      puts "*** switch_light_on"
+      Piface.write 0, 1
+      true # if true message will be deleted from imap server
     end
 
     # ----------------------------------
     # external command we've bind
     # ----------------------------------
     def switch_light_off
-	   puts "*** switch_light_off"
-	   true
+      puts "*** switch_light_off"
+      Piface.write 0, 0
+      true
     end
 
 ## References

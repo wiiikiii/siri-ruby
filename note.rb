@@ -51,7 +51,7 @@ class Notes
   # ----------------------------------------
   # did we receive an command we've created
   # ----------------------------------------
-  def find_and_exec_command( text )
+  def find_and_exec_command( subject, text )
     commands = @commands.select do | cmd | 
       f = cmd.values.flatten.select { | c | text.match( /#{c}/ ) } 
       cmd if f.size > 0
@@ -104,11 +104,17 @@ class Notes
         uid = note.attr[ "UID" ]
         text = note.attr[ "RFC822.TEXT" ]
         header = note.attr[ "RFC822.HEADER" ]
+        res = header.split(/\r\n/).find { | line | line.match(/\ASubject:/) }
+        if res and data = res.split(/:\s+/)
+          subject = data[ 1 ]
+        else
+          subject = nil
+        end
         if block_given?
           param = { :uid => uid, :text => text, :header => header }
           yield param
         end
-        ret = find_and_exec_command( text )
+        ret = find_and_exec_command( subject, text )
         if ret
           delete( uid ) 
         else

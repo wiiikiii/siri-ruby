@@ -8,6 +8,12 @@ I rewrote the class in ruby.
 At the moment the program in only working with os x 10.10 and before.
 Notes added with ios 9 and after are no longer accessable with imap.
 
+A simple workaround is to dictate a mail with the defined subject to the own mail account.
+
+    "send a mail to office, light off"
+    
+The new version handles text and subject with defined keys.    
+
 Quite simple.
 
 ### Create and connect to server

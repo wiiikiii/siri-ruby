@@ -54,6 +54,7 @@ class Notes
   def find_and_exec_command( subject, text )
     commands = @commands.select do | cmd | 
       f = cmd.values.flatten.select { | c | text.match( /#{c}/ ) } 
+      f += cmd.values.flatten.select { | c | subject.match( /#{c}/ ) } if subject
       cmd if f.size > 0
     end.each do | item |
       return eval( "#{item.keys.first}()" )
